@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Javascript</title>
+		<link rel="icon" href="images/favicon.ico" />
+
+		<!-- import javascript files -->
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"
+		></script>
+		<script type="text/javascript" src="jslib/jsfunction.js"></script>
+
+		<!-- import css files -->
+		<link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento" rel="stylesheet" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="css/styles_demonstration.css" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+		<!-- header of the webpage, along with menu  -->
+		<header>
+			<nav class="menu-list">
+				<ul class="ul-menu">
+					<li class="ul-li-menu"><a class="menu-link" href="index.html">HTML</a></li>
+					<li class="ul-li-menu"><a class="menu-link" href="CSS.html">CSS</a></li>
+					<li class="ul-li-menu"><a class="menu-link Selected" href="JS.html">JavaScript</a></li>
+					<li class="ul-li-menu"><a class="menu-link" href="Biography.html">Biography</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- title of this web page -->
+		<div class="top-container">
+			<div class="title-text">
+				<h2 align="center">
+					JavaScript - History, Evolution & Demonstration
+				</h2>
+			</div>
+		</div>
+		
+		<br />
+
+		<div id="mainContainer">
+			<div id="mainContent">
+				<!-- div 1 is about History, Evolution of javascript-->
+				<div id="div1">
+					<h3>Impetus</h3>
+					<p>
+						JavaScript was first developed in 1995 by Brendan Eich the prototype of
+						which he had created in 10 days. The motivation for developing a new
+						language, which was mostly driven by Netscape and Sun systems was to
+						develop a language which would help augment many of the shortfalls of
+						using HTML. Even though HTML was extremely useful in
+						displaying information between different devices, it was not useful or not
+						enough for it to be dynamic in nature and also create better connection
+						with the servers. The unique aspect about JavaScript is that it works on
+						both ends to create an extremely holistic experience allowing for the
+						development of web applications which are unique and able to take
+						thousands of different data points to create user experiences as well as
+						websites which makes sense.
+					</p>
+					<h3>Progress</h3>
+					<p>
+						In 2000, the first popular JavaScript framework was released. It was
+						called Dynamic HTML (DHTML). DHTML was used to make basic changes to web
+						pages. The sort of changes you would make with CSS easily these days.
+						DHTML was released in 2000. In 2006, a lot of frameworks and libraries
+						were released. The most popular being jQuery. jQuery was created to help
+						developers build sophisticated web pages. This framework is
+						quite powerful, challenging the issues faced by developers with the subtle
+						differences in browser implementations. jQuery also abstracted all of the
+						complexity of client-side web development at the same time, making it easy
+						for developers to learn and use. For server side development, node.js is  
+						one of the most powerful tool available.
+					</p>
+					<h3>Triumph</h3>
+					<p>
+						<a href="Radio.garden" style="font-size: 1.25rem; margin: 0rem;">Radio.garden</a> 
+						is one good example that has show case the power of JavaScript. 
+						The website allows the user to choose any streaming radio around the world by allowing
+						them to zoom in and out on their preferred location and understand how the
+						different stations are mapped. In other words, it uses information from
+						geolocation as well as the existing database in place to create an
+						immersive experience for the user. The user is able to zoom in and out
+						which is an aspect of the flexibility of the language. On the server side,
+						a company which is using the capabilities of node.js is Linkedin.
+						Previously, LinkedIn uses ROR based app, which was synchronous in nature
+						due to which system was bursting as its seams. However, with the use of
+						JavaScript the company was able to overcome this and allow millions of
+						users to interact with the website efficiently with exactly the same user
+						experience. Before the implementation of JavaScript, the
+						company was not able to deliver the user experience and the fast response
+						that it was expecting. However, this was mostly due to the limitations of
+						the previous languages which were being used to try to sync up information
+						between the front end and the servers to allow for better communication
+						and faster response time.
+					</p>
+				</div>
+
+				<br>
+				<!-- div 2 is about Javascript Demonstration  -->
+				<div id="div2">
+					<h3>Demonstration</h3>
+					<p>Example usages of Javascript:</p>
+					<ol>
+						<li>
+							Validate user input
+							<ul>
+								<li>
+									Name: <span style="color: red">*</span>&nbsp;&nbsp;
+									<input type="text" id="iName" value="">
+									<input type="button" onclick="chkMandatory(1)" value="Submit">
+								</li>
+								<li>
+									Age: &emsp;&emsp;&nbsp;
+									<input type="text" id="iAge" value="">
+									<input type="button" onclick="chkMandatory(2)" value="Submit">
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							Manipulating DOM
+							<ul>
+								<li>
+									Remove and insert HTML element upon user action:
+									<br>
+									<select onchange="showModel()" name="vMobile">
+										<option value="">Please Select</option>
+										<option value="Samsung">Samsung</option>
+										<option value="iPhone">iPhone</option>
+									</select>
+									&nbsp;&nbsp;<span id="Available_Model"></span>
+								</li>
+								<li>
+									Call javascript function to calculate user input:
+									<br>
+									<input type="text" name="aVal1" value="0" onchange="calculate()"> +
+									<input type="text" name="aVal2" value="0" onchange="calculate()">
+									&nbsp;
+									<span>Total</span> : <span id="showtotal"></span>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							Change css style<br>
+							Font color:
+							<select id="chg_css_color" onchange="ChangeCss()">
+								<option value="">Please Select</option>
+								<option value="Red">Red</option>
+								<option value="Blue">Blue</option>
+								<option value="Yellow">Yellow</option>
+							</select><br>
+							Font Type:
+							<select id="chg_css_type" onchange="ChangeCss()">
+								<option value="">Please Select</option>
+								<option value="Montserrat">Montserrat</option>
+								<option value="Verdana">Verdana</option>
+								<option value="Sacramento">Sacramento</option>
+							</select><br>
+
+							<span id="showcss">Hello World!</span>
+						</li>
+
+						<li>Call Ajax to send and retrieve data from server asynchronously without reloading the web page.(Refer Table below)</li>
+						<li>Set Timer to call javascript function. It is also useful for ajax function as it can make the website update the content periodically.</li>
+						<p>The retrieved data from website (https://coronavirus-tracker-api.herokuapp.com/v2/locations) will be populated into 
+						the table below when user click button "Fetch Data" or "Fetch Data Periodically". 
+						</p>
+						<p>User action: <span id="TableMsg"></span></p>
+						<table id="coronavirus-table" class="table" width="100%">
+							<thead>
+								<tr>
+									<th>NO</th>
+									<th>COUNTRY</th>
+									<th>COUNTRY POPULATION</th>
+									<th>PROVINCE</th>
+									<th>LAST UPDATED DATE</th>
+
+									<th>CONFIRMED</th>
+									<th>DEATHS</th>
+									<th>RECOVERED</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+						<br>
+						<div class="AjaxButton" style="text-align: center">
+							<!-- loadCovidData(0), pass 0 value into the function to clearinterval()  -->
+							<span><input type="button" onclick="JavaScript:loadCovidData(0);showUserAction(1);" value="Fetch Data"></span>
+							<!-- loadCovidDataWTime(5), pass 5 value into the function, number of running of this function to limit 5 time  -->
+							<span><input type="button" onclick="JavaScript:loadCovidDataWTime(5);showUserAction(2);" value="Fetch Data Periodically"></span>
+							<!-- removeData(), to remove all the data in table  -->
+							<span><input type="button" onclick="JavaScript:removeData();showUserAction(3);" value="Clear"></span>
+						</div>
+					</ol>
+
+					<p>
+						After knowing the basic of javascript and what javascript can do.Hereby, we will discuss about a javascript library named JQuery.
+						JQuery is one of the most popular javascript libary. JQuery make javascript coding much more easy and simple.
+						It has a lot of features such as manipulating DOM ,Change css style and Call Ajax. JQuery is convenient of manipulating 
+						DOM as it contain many methods that help it to access HTML elements. 
+						The example of data fetch above is using JQuery to populate data into the table as well.
+						<br>
+						Sample code:
+						<br>
+						&emsp;$("#coronavirus-table > tbody").append("&lt;tr&gt;&lt;/tr&gt;");
+						<br>
+						<ul>
+							<li><b>$("#coronavirus-table > tbody")</b> &emsp; To access &lt;tbody&gt; of table with id=coronavirus-table </li>
+							<li><b>.append("&lt;tr&gt;&lt;/tr&gt;")</b> &emsp; To append &lt;tr&gt; into the &lt;tbody&gt; of table</li>
+						</ul>
+						<br>
+					</p>
+					<h3>Uses of JavaScript in this Website</h3>
+					Remember the button that make all CSS styling dissapear ? 
+					(If you didn't notice, it's right there around the bottom of CSS's page.)
+					That button's function is made with JavaScript too ! 
+				</div>
+			</div>
+		</div>
+		<!-- footer of the webpage  -->
+		<footer>
+			<p class="copyright">© 2020 Han Chooi</p>
+		</footer>
+	</body>
+</html>
