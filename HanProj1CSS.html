@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>CSS</title>
+
+		<link rel="icon" href="images/favicon.ico" />
+		<!-- import javascript files -->
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"
+		></script>
+		<script type="text/javascript" src="jslib/jsfunction.js"></script>
+
+		<!-- import css files -->
+		<link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento" rel="stylesheet" />
+		<script type="text/javascript">
+			$('head').append('<link rel="stylesheet" type="text/css" href="css/styles.css">');
+			$('head').append('<link rel="stylesheet" type="text/css" href="css/styles_demonstration.css">');
+		</script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+		<!-- header of the webpage, along with menu  -->
+		<header>
+			<nav class="menu-list">
+				<ul class="ul-menu">
+					<li class="ul-li-menu"><a class="menu-link" href="HanProj1HTML.html">HTML</a></li>
+					<li class="ul-li-menu"><a class="menu-link Selected" href="HanProj1CSS.html">CSS</a></li>
+					<li class="ul-li-menu"><a class="menu-link" href="HanProj1JS.html">JavaScript</a></li>
+					<li class="ul-li-menu"><a class="menu-link" href="Biography.html">Biography</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- title of this web page -->
+		<div class="top-container">
+			<div class="title-text">
+				<h2 align="center">
+					CSS - Purpose, Motivation & Demonstration
+				</h2>
+			</div>
+		</div>
+
+		<br />
+
+		<div id="mainContainer">
+			<div id="mainContent">
+				<!-- div 1 is about CSS Purpose & Motivation  -->
+				<div id="div1">
+					<h3>Purpose & Motivation</h3>
+					<p>
+						CSS (Cascading Style Sheets) allow styling to be made flexibly and provides 
+						the backbone of visual capabilities for HTML language. Most of the syntax 
+						of CSS are very different compare to HTML. Many of the markup is not present in
+						traditional HTML because controlling styling and separating it from content 
+						requires the development of new variables. The essence and main motivation of 
+						having a CSS was so that content could be separated from design. This way, 
+						design becomes more flexible based on the various needs and circumstances. For
+						example, based on the browsing devices and even other aspects, 
+						the website can change dramatically which is done automatically controlled 
+						by the CSS in place. This would not be possible by having a system in which 
+						both content and design go hand-in-hand. Without CSS, it would be extremely 
+						tedious have different styles to fulfill the need for personalisation.
+					</p>
+					<h3>Benefits of separating style & contents</h3>
+					<p>
+						CSS has help HTML become even more immersive and provide a lot of  
+						convenience for web developers. By seperating styling and contents,
+						it allows the reuse of fragments of styling and contents. This essentially 
+						means that the same content can be represented in many different styles and 
+						the same style can be applied to many differnt contents.
+						Hence, different classes of output devices and screen sizes 
+						can all be accommodated through CSS code development. 
+						Another clear advantages of separating stylng from content is that 
+						it allow the changes of styles which are tailored to the
+						reader preference. For example, styles suited for individuals that require 
+						accessibility aids can be developed via CSS so that user can switch to such  
+						style if neccessary. Separating styling and contents also allows for
+						much easier development of standardised and consistent styles. 
+						By applying the same CSS across different pages of a website, 
+						the whole website can deliver a consistent theme and feel. Lastly, 
+						the separation of content and style makes it easier for different content
+						writter to work together with the web designer. The content writer don’t 
+						have to worry about the design while developing the content.
+					</p>
+					<h3>Achievement</h3>
+					<p>
+						As can be seen, CSS plays an essential part in helping HTML become more
+						beautiful and allow it to do much more. It helps controls many of the flaws
+						which traditional HTML has, such as inconsistent formatting or
+						difficult formatting. CSS has overcome this by creating a new syntax which
+						adds on to traditional HTML and helps the entire subset of the code to
+						become richer and more efficient in its execution.
+					</p>
+				</div>
+
+				<!-- div 2 is about CSS Demonstration  -->
+				<div id="div2">
+					<h3>Demonstration</h3>
+					<p> The basic of CSS:</p>
+
+					<ol>
+						<li><b>Selector & pseudo-classes</b>
+							User can apply CSS by selector such as element type, class and id. 
+							It is important to use efficient selector, as it will boost the website 
+							performance or even reduce the development time. The example to use selector are:
+							<ol>
+								<li>To select by element type --> div{width: 80px}</li>
+								<li>To select by id --> #divID{width: 80px}</li>
+								<li>To select by class --> .divClass{width: 80px}</li> 
+							</ol>
+							Pseudo-classes can be used to apply an special effect to an element.For example,
+							<ol>
+								<li>:hover <br>
+									<span id="showHover"><b>"mouse over this text to show hover effect"</b></span>
+								</li>
+									
+								<li>:active <br>
+									<span id="showActive"><b>"click and hold on this text to show active effect"</b></span>
+								</li>
+								<li>:focus (Try click the box below)<br>
+									<input type="text" id="showFocus" value="">
+								</li>
+
+								<li>::before<br>
+									<span id="showbefore"><b>"Text written in HTML"</b></span>
+								</li>
+								<li>::after<br>
+									<span id="showafter"><b>"Text written in HTML"</b></span>
+								</li>
+							</ol>
+						</li>
+
+						<li><b>Font</b><br>
+						  CSS can set font style to improve legibility. For example,
+							<ol>
+								<li>
+									"FONT-WEIGHT" to highlight the keyword.
+									<ul>
+										<li><span id="eg_bold">DO NOT</span> disturb</li>
+									</ul>
+								</li>
+								<li>
+									"FONT-STYLE". specify font style for a text.
+									<ul>
+										<li>Italic(can use to denote book title) - <span id="eg_italic">Harry Potter</span> is a good novel.</li> 
+									</ul>
+									
+								</li>
+								<li>
+									"TEXT-DECORATION: line-through" to mark up updated info.
+									<ul>
+										<li>Meeting held on <span id="eg_line-through">01/01/2020</span> 03/01/2020"</li>
+									</ul>
+								</li>
+								<li>
+									"FONT-SIZE" to resize font.
+									<ul>
+										<li><span id="eg_size">Hello</span> world</li>
+									</ul>
+								</li>
+								<li>
+									"COLOR" to set font colour.
+									<ul>
+										<li><span id="eg_color">Hello World</span></li>
+									</ul>	
+								</li>
+							</ol>
+						</li>
+						<li><b>Property of CSS to help in alignment</b>
+							<ol>
+								<li>margin
+									<ol>
+										<li>create space around the elements, outside of any border</li>
+									</ol>
+								</li>
+									
+								<li>padding
+									<ol>
+										<li>create space around the elements, inside of any border</li>
+									</ol>
+								</li>
+								<li>position
+									<ol>
+										<li>static: positioned relative to its normal position</li>
+										<li>absolute: positioned elements can overlap with other elements</li>
+										<li>relative: positioned elements in normal document flow</li>
+										<li>fixed: Elements will stays at the same place even the page is scrolled</li>
+									</ol>
+								</li>
+							</ol>
+						</li>
+
+						<li><b>Border</b><br>
+							Apply different styles, colour for the border. For example,
+							<ol>
+								<li>dotted <span id="eg_border_dotted">Hello World!</span></li>
+								<li>solid <span id="eg_border_solid">Hello World!</span></li>
+								<li>combination of dotted and solid <span id="eg_border_mix">Hello World!</span></li>
+							</ol>
+						</li>
+					</ol>
+					<!-- button will call a function removecss() to remove imported css file -->
+				</div>
+
+				<!-- div 3 is about CSS that used in this website  -->
+				<div id="div3">
+					<h3>Styling attributes of CSS in this Website</h3>
+					<p>
+						This website itself uses a lot of CSS to get to its current state.
+						For example, the colour theme of the website uses CSS to set it's background colour.
+						All the text's typography in this website is specified with CSS as well.
+						Besides, the layout of text, navigation bar and footer are all specified by CSS !
+						CSS can help to standardize the layout and design of a website. 
+						All four pages in this website share the same CSS.
+						For demonstation, please click  <input type="button" name="btnHere" value="Here" onclick="removecss()">
+						to see this webpage without CSS.
+						If you click to my Biography page, you can see a Contact Me button at the bottom.
+						That 'Contact Me' button's touch and feel is designed with CSS too !
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		<!-- footer of the webpage --> 
+		<footer>
+			<p class="copyright">© 2020 Han Chooi</p>
+		</footer>
+	</body>
+</html>

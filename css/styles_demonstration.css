@@ -1,0 +1,52 @@
+#eg_bold{
+	font-weight: bolder;
+}
+
+#eg_italic{
+	font-style: italic;
+}
+
+#eg_line-through{
+	text-decoration: line-through;
+}
+
+#eg_size{
+	font-size: 20PX;
+}
+
+#eg_color{
+	color: red;
+}
+
+#eg_border_dotted{
+	border-style: dotted;
+}
+
+#eg_border_solid{
+	border-style: solid;
+}
+
+#eg_border_mix{
+	border-style: dotted solid;
+}
+
+#showHover:hover{
+	color: red;
+}
+
+#showActive:active{
+	color: green;
+}
+
+#showFocus:focus{
+	background-color: yellow;
+}
+
+#showbefore::before{
+	content: 'Make text appear before specified line- ';
+}
+
+#showafter::after {
+	content: '-Make text appear after specified line';
+}
+
