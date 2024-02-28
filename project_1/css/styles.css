@@ -154,8 +154,8 @@ table#coronavirus-table, #coronavirus-table tr, #coronavirus-table td, #coronavi
 
 /* make content of the webpage to align to center */
 #mainContent {
-  margin-left: 10em;
-  margin-right: 10em;
+  margin-left: 10%;
+  margin-right: 10%;
   text-align: justify;
   overflow: auto;
   padding-bottom: 150px;
