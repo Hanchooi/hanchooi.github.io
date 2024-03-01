@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="main-container">
+        <h1 class="mt-5 text-center">Dicee Game</h1>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <p>Current Balance: $<span id="balance">100</span></p>
+                
+                <div class="mb-3 text-center" id="bet-amounts">
+                    <button class="btn btn-primary mr-2" onclick="setBetAmount(5)">Bet $5</button>
+                    <button class="btn btn-primary mr-2" onclick="setBetAmount(10)">Bet $10</button>
+                    <button class="btn btn-primary mr-2" onclick="setBetAmount(25)">Bet $25</button>
+                    <button class="btn btn-primary" onclick="setBetAmount(50)">Bet $50</button>
+                </div>
+
+                <p id="selected-bet">Selected Bet Amount: $<span id="current-bet-amount">5</span></p>
+
+                <div id="dice-images" class="mb-3 text-center"></div>
+                
+                <button id="bet-big-button" class="btn btn-success mr-2 mb-3" onclick="placeBet('big')">Place Big Bet</button>
+                <button id="bet-small-button" class="btn btn-warning mb-3" onclick="placeBet('small')">Place Small Bet</button>
+                
+                <p id="result"></p>
+                <div class="text-center">
+                    <button id="restart-button" class="btn btn-danger mt-3 hidden-button" onclick="resetGame()">Restart Dice Game</button>
+                </div>
+
+                <audio id="dice-roll-audio" src="assets/diceRoll.wav"></audio>
+            </div>
+            <div class="col-md-4" style="height: 200px; overflow: auto;">
+                <div id="history-sidebar">
+                    <h4>Roll History</h4>
+                    <div id="history-dice-images" style="width: 200px;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="diceGame.js"></script>
+    </div>
+</body>
+</html>
