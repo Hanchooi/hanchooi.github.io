@@ -85,7 +85,7 @@ function placeBet(betType) {
     const sum = diceResults.reduce((acc, val) => acc + val, 0);
     let resultMessage = `You rolled ${diceResults.join(', ')}. Total: ${sum}. `;
     
-    if ((betType === 'big' && sum >= 10) || (betType === 'small' && sum < 10)) {
+    if ((betType === 'big' && sum > 10) || (betType === 'small' && sum <= 10)) {
         balance += betAmount * 2;
         resultMessage += `You won $${betAmount * 2}!`;
     } else {
