@@ -1893,7 +1893,8 @@ ggplot(instDf2) + geom_bar(mapping= (aes(x= reorder(stu.Inst,count) , y = count 
 <p>Interestingly, although University of Adelaide, University of Western Australia(UWA) and The Australian National University(ANU) are G8 institutions, they have relatively much less students compare to the others.</p>
 <p>The second figure gave us some insight on this observation. It seems the top 10 institutions with the most students are from Victoria, New South Wales and Northern Territory. In fact, there are only three institutions not from these three regions in the top 20. Furthermore, all three G8 institutions with less students are from neither of these 3 regions as well.</p>
 <p>This might indicates that the institution’s location (whether or not it is in VIC, NSW or NT) of the institution might be even more correlated with the number of students enrolled.</p>
-<h3>Data Transformation actions: </h3><p>Form Table of Institution, Institution Types, State of Institution and the respective Counts. Assign new Data Frame of 4 columns to a new variable. Subsetting Datasets to omit irrevalent rows to get inner joint of 3 columns. Renaming Columns for easier handling of data.</p>
+<h3>Data Transformation actions: </h3>
+<p>Form Table of Institution, Institution Types, State of Institution and the respective Counts. Assign new Data Frame of 4 columns to a new variable. Subsetting Datasets to omit irrevalent rows to get inner joint of 3 columns. Renaming Columns for easier handling of data.</p>
 <h3>Reason of Transformation: </h3><p>To get a new Data Frame with only 4 variables that we need for these barcharts. To count number of students before geom_bar so that it is possible to arrange the barcharts according to the number of students .</p>
 <h2>Objective 2:</h2>
 <p>Field of study that each university and region specializes (if any)</p>
@@ -1924,7 +1925,7 @@ ggplot(knownFoe) + geom_bar(mapping = aes(x= Institution, fill=broad_foe), posit
 <!-- rnb-text-begin -->
 <h3>Interpretation: </h3><p>“foe” refers to Field of Study mentioned in <a href="https://heimshelp.education.gov.au/resources/field-of-education-types" class="uri">https://heimshelp.education.gov.au/resources/field-of-education-types</a>.</p>
 <p>From the figure above, it seems that most institutions have no obvious specialization in any field. However, it is worth to note that ANU has the highest proportion of students studying in society and culture.</p>
-<h2>Data Transformation actions: Count and Proportion was results of data tranformation done by geom_bar Subsetting Datasets to omit rows with empty data or NA in broad_foe (Field) Assigning subseted Data Frame to a new variable (knowFoe) for conveniece to access later.</h2>
+<h3>Data Transformation actions: </h3><p>Count and Proportion was results of data tranformation done by geom_bar Subsetting Datasets to omit rows with empty data or NA in broad_foe (Field) Assigning subseted Data Frame to a new variable (knowFoe) for conveniece to access later.</p>
 <p>Change Column title “Food, Hospitality And” to “Food, Hospitality and Personal Service”</p>
 <h3>Reason of Transformation: </h3><p>The figures here concerns on the proportions of field of study for each institution. There are only 1528 NA or empty data among 128967 datas. With such low % of missing values, it is safe to omit, since doing so won’t affect the proportions much.</p>
 <p>Change Column title “Food, Hospitality And” to “Food, Hospitality and Personal Service” for easier understanding.</p>
@@ -1941,7 +1942,7 @@ ggplot(knownFoe) + geom_bar(mapping = aes(x= Institution, fill=broad_foe), posit
 <h3>Interpretation: </h3><p>From the figure above, it seems that most states have no obvious specialization in any field.</p>
 <p>ACT have the highest proportions in Society and Culture. From previous barcharts, we know that ANU is the institute with the most students in ACT. ANU being the institution with highest percentage of students studying Society and Culture might be a contributing factor.</p>
 <p>MUL have the highest proportions in Health and Education. There are only very small proportions of students studying on Food, Hospitality and Personal Services Overall,the most popular field of studies are : “Society &amp; Culture”, “Management &amp; Commerce”, “Health” and “Education” These indicates the possibility of some form of specialization of instututions in certain states/region.</p>
-<h2>Data Transformation actions: Count and Proportion was results of data tranformation done by geom_count.</h2>
+<h3>Data Transformation actions: </h3><p>Count and Proportion was results of data tranformation done by geom_count.</p>
 <h3>Reason of Transformation: </h3><p>The figure above concerns the proportions of field of study for each states</p>
 <h2>Objective 3:</h2>
 <p>Differences in the preferences of International Students and Domestic Students. (region and field of study)</p>
@@ -1957,7 +1958,7 @@ ggplot(knownFoe) + geom_bar(mapping = aes(x= Institution, fill=broad_foe), posit
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <h3>Interpretation: </h3><p>From the figure above, it seems that most domestic and international have similar distributions across different states. There are slightly more percentage of International students studying in Victoria than Domestic students. Vice versa for New South Wales.</p>
-<h2>Data Transformation actions: Count and Proportion was results of data tranformation done by geom_bar.</h2>
+<h3>Data Transformation actions: </h3><p>Count and Proportion was results of data tranformation done by geom_bar.</p>
 <h3>Reason of Transformation: </h3><p>The figure above concerns the proportions of states where students studies among international &amp; Domestice students.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
