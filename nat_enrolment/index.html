@@ -1888,13 +1888,13 @@ ggplot(instDf2) + geom_bar(mapping= (aes(x= reorder(stu.Inst,count) , y = count 
 <!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<h3>Interpretions: The Figures above shows the number of students of each institutions and their respective ranking according to the number of students.</h3>
+<h3>Interpretions: </h3><p>The Figures above shows the number of students of each institutions and their respective ranking according to the number of students.</p>
 <p>Five out of eight G8 institutions are ranked at the top. Hinting that G8 status might be correlated with the number of students enrolled to the institution.</p>
 <p>Interestingly, although University of Adelaide, University of Western Australia(UWA) and The Australian National University(ANU) are G8 institutions, they have relatively much less students compare to the others.</p>
 <p>The second figure gave us some insight on this observation. It seems the top 10 institutions with the most students are from Victoria, New South Wales and Northern Territory. In fact, there are only three institutions not from these three regions in the top 20. Furthermore, all three G8 institutions with less students are from neither of these 3 regions as well.</p>
 <p>This might indicates that the institution’s location (whether or not it is in VIC, NSW or NT) of the institution might be even more correlated with the number of students enrolled.</p>
-<h3>Data Transformation actions: Form Table of Institution, Institution Types, State of Institution and the respective Counts. Assign new Data Frame of 4 columns to a new variable. Subsetting Datasets to omit irrevalent rows to get inner joint of 3 columns. Renaming Columns for easier handling of data.</h3>
-<h3>Reason of Transformation: To get a new Data Frame with only 4 variables that we need for these barcharts. To count number of students before geom_bar so that it is possible to arrange the barcharts according to the number of students .</h3>
+<h3>Data Transformation actions: </h3><p>Form Table of Institution, Institution Types, State of Institution and the respective Counts. Assign new Data Frame of 4 columns to a new variable. Subsetting Datasets to omit irrevalent rows to get inner joint of 3 columns. Renaming Columns for easier handling of data.</p>
+<h3>Reason of Transformation: </h3><p>To get a new Data Frame with only 4 variables that we need for these barcharts. To count number of students before geom_bar so that it is possible to arrange the barcharts according to the number of students .</p>
 <h2>Objective 2:</h2>
 <p>Field of study that each university and region specializes (if any)</p>
 <!-- rnb-text-end -->
@@ -1922,11 +1922,11 @@ ggplot(knownFoe) + geom_bar(mapping = aes(x= Institution, fill=broad_foe), posit
 <!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<h3>Interpretation: “foe” refers to Field of Study mentioned in <a href="https://heimshelp.education.gov.au/resources/field-of-education-types" class="uri">https://heimshelp.education.gov.au/resources/field-of-education-types</a>.</h3>
+<h3>Interpretation: </h3><p>“foe” refers to Field of Study mentioned in <a href="https://heimshelp.education.gov.au/resources/field-of-education-types" class="uri">https://heimshelp.education.gov.au/resources/field-of-education-types</a>.</p>
 <p>From the figure above, it seems that most institutions have no obvious specialization in any field. However, it is worth to note that ANU has the highest proportion of students studying in society and culture.</p>
 <h2>Data Transformation actions: Count and Proportion was results of data tranformation done by geom_bar Subsetting Datasets to omit rows with empty data or NA in broad_foe (Field) Assigning subseted Data Frame to a new variable (knowFoe) for conveniece to access later.</h2>
 <p>Change Column title “Food, Hospitality And” to “Food, Hospitality and Personal Service”</p>
-<h3>Reason of Transformation: The figures here concerns on the proportions of field of study for each institution. There are only 1528 NA or empty data among 128967 datas. With such low % of missing values, it is safe to omit, since doing so won’t affect the proportions much.</h3>
+<h3>Reason of Transformation: </h3><p>The figures here concerns on the proportions of field of study for each institution. There are only 1528 NA or empty data among 128967 datas. With such low % of missing values, it is safe to omit, since doing so won’t affect the proportions much.</p>
 <p>Change Column title “Food, Hospitality And” to “Food, Hospitality and Personal Service” for easier understanding.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -1938,11 +1938,11 @@ ggplot(knownFoe) + geom_bar(mapping = aes(x= Institution, fill=broad_foe), posit
 <!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<h3>Interpretation: From the figure above, it seems that most states have no obvious specialization in any field.</h3>
+<h3>Interpretation: </h3><p>From the figure above, it seems that most states have no obvious specialization in any field.</p>
 <p>ACT have the highest proportions in Society and Culture. From previous barcharts, we know that ANU is the institute with the most students in ACT. ANU being the institution with highest percentage of students studying Society and Culture might be a contributing factor.</p>
 <p>MUL have the highest proportions in Health and Education. There are only very small proportions of students studying on Food, Hospitality and Personal Services Overall,the most popular field of studies are : “Society &amp; Culture”, “Management &amp; Commerce”, “Health” and “Education” These indicates the possibility of some form of specialization of instututions in certain states/region.</p>
 <h2>Data Transformation actions: Count and Proportion was results of data tranformation done by geom_count.</h2>
-<h3>Reason of Transformation: The figure above concerns the proportions of field of study for each states</h3>
+<h3>Reason of Transformation: </h3><p>The figure above concerns the proportions of field of study for each states</p>
 <h2>Objective 3:</h2>
 <p>Differences in the preferences of International Students and Domestic Students. (region and field of study)</p>
 <!-- rnb-text-end -->
@@ -1956,9 +1956,9 @@ ggplot(knownFoe) + geom_bar(mapping = aes(x= Institution, fill=broad_foe), posit
 <!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<h3>Interpretation: From the figure above, it seems that most domestic and international have similar distributions across different states. There are slightly more percentage of International students studying in Victoria than Domestic students. Vice versa for New South Wales.</h3>
+<h3>Interpretation: </h3><p>From the figure above, it seems that most domestic and international have similar distributions across different states. There are slightly more percentage of International students studying in Victoria than Domestic students. Vice versa for New South Wales.</p>
 <h2>Data Transformation actions: Count and Proportion was results of data tranformation done by geom_bar.</h2>
-<h3>Reason of Transformation: The figure above concerns the proportions of states where students studies among international &amp; Domestice students.</h3>
+<h3>Reason of Transformation: </h3><p>The figure above concerns the proportions of states where students studies among international &amp; Domestice students.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2dwbG90KGtub3duRm9lKSArIGdlb21fYmFyKG1hcHBpbmcgPSBhZXMoeD1vdmVyc2VhcywgZmlsbD1icm9hZF9mb2UpLCBwb3NpdGlvbiA9XCJmaWxsXCIpICsgY29vcmRfcG9sYXIoXCJ5XCIsIHN0YXJ0PTApICsgZ2d0aXRsZShcIkZpZWxkIG9mIFN0dWR5IGZvciBEb21lc3RpYyB2cyBPdmVyc2VhcyBTdHVkZW50c1wiKSArIHhsYWIoXCJcIikgKyB5bGFiKFwiUGVyY2VudGFnZSBvZiBlbnJvbG1lbnQgaW4gZGlmZmVyZW50IGZpZWxkc1wiKSArIGxhYnMoZmlsbD1cIkZpZWxkIG9mIFN0dWR5XCIpXG5gYGAifQ== -->
@@ -1969,11 +1969,11 @@ ggplot(knownFoe) + geom_bar(mapping = aes(x= Institution, fill=broad_foe), posit
 <!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<h3>Interpretation: Among International Students, there are higher percentage of students studying in field of: “Management &amp; Commerce” , “Information Technology” and “Engineering &amp; Related Technology”.</h3>
+<h3>Interpretation: </h3><p>Among International Students, there are higher percentage of students studying in field of: “Management &amp; Commerce” , “Information Technology” and “Engineering &amp; Related Technology”.</p>
 <p>As for Domestic Students, there are higher percentage of students studying in field of: “Society &amp; Culture”, “Creative Arts” and “Education”</p>
 <p>These difference might be due to differences in preference or mentality of International and Domestic Students. It is worth while to examine the causes of such differences.</p>
-<h3>Data Transformation actions: Count and Proportion was results of data tranformation done by geom_bar.</h3>
-<h3>Reason of Transformation: The figure above concerns the proportions of field of study for International &amp; Domestic Students.</h3>
+<h3>Data Transformation actions: </h3><p>Count and Proportion was results of data tranformation done by geom_bar.</p>
+<h3>Reason of Transformation: </h3><p>The figure above concerns the proportions of field of study for International &amp; Domestic Students.</p>
 <h2>Objective 4:</h2>
 <p>Indication of gender-segregation in Field of Study.</p>
 <!-- rnb-text-end -->
@@ -1990,9 +1990,9 @@ grid.arrange(a,b, heights=c(1/4, 3/4), nrow = 2)</code></pre>
 <!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<h3>Interpretation: Overall, there are more females than male in our samples. Field of studies of “Information Technology” and “Engeneering &amp; Related Technology” have much higher percentage of male than female. Field of studies of “Education” and “Health” have much higher percentage of females than males. This can be an indication that there are certain Field of Studies that society viewed as “for male” or “for female”.</h3>
-<h3>Data Transformation actions: Count and Proportion was results of data tranformation done by geom_bar.</h3>
-<h3>Reason of Transformation: The figure above concerns the proportions of field of study for male &amp; female students.</h3>
+<h3>Interpretation: </h3><p>Overall, there are more females than male in our samples. Field of studies of “Information Technology” and “Engeneering &amp; Related Technology” have much higher percentage of male than female. Field of studies of “Education” and “Health” have much higher percentage of females than males. This can be an indication that there are certain Field of Studies that society viewed as “for male” or “for female”.</p>
+<h3>Data Transformation actions: </h3><p>Count and Proportion was results of data tranformation done by geom_bar.</p>
+<h3>Reason of Transformation: </h3><p>The figure above concerns the proportions of field of study for male &amp; female students.</p>
 <h2>Objective 5:</h2>
 <p>Year trends of number of students enrolled in higher institutions.</p>
 <!-- rnb-text-end -->
@@ -2006,10 +2006,10 @@ grid.arrange(a,b, heights=c(1/4, 3/4), nrow = 2)</code></pre>
 <!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<h3>Interpretation: Overall, there is an upward trend of number of students enrolled in higher institutions, which is a good sign. There is a slight drop in number of students in year 2017. However, at first glance, such small fluctuation in number of students seems natural throughout the years. This might be simply due to Natural Variations.</h3>
+<h3>Interpretation:</h3><p>Overall, there is an upward trend of number of students enrolled in higher institutions, which is a good sign. There is a slight drop in number of students in year 2017. However, at first glance, such small fluctuation in number of students seems natural throughout the years. This might be simply due to Natural Variations.</p>
 <p>We can also see that number of domestic students are much higher than international students throughout the years. Number of domestic students increase faster as well. The increase in total number of students seems to come mostly from the increase of Domestic Students. This observation is quite expected since government must emphasize on providing higher educations to their citizens.</p>
-<h3>Data Transformation actions: Count was results of data tranformation done by geom_bar.</h3>
-<h3>Reason of Transformation: The figure above concerns the number of male , female and all students enrolled in each year from 2015 to 2017.</h3>
+<h3>Data Transformation actions: </h3><p>Count was results of data tranformation done by geom_bar.</p>
+<h3>Reason of Transformation: </h3><p>The figure above concerns the number of male , female and all students enrolled in each year from 2015 to 2017.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyB0YWJsZSgpIGFnZ3JlZ2F0ZXMgYWNjb3JkaW5nIHRoZSBJbnN0aXR1dGlvblxueWVhclN1bXMgPC0gdGFibGUobmF0RW5yb2wkWWVhcixuYXRFbnJvbCRnZW5kZXIpXG4jIGFzLmRhdGEuZnJhbWUoKSBjb252ZXJ0cyB0YWJsZSBvYmplY3QgaW50byBhIGRhdGEgZnJhbWVcbnllYXJEZiA8LSBhcy5kYXRhLmZyYW1lKHllYXJTdW1zKVxuIyB0YWtpbmcgb25seSByb3dzIHdpdGggbm9uLXplcm8gZnJlcXVlbmN5XG55ZWFyRGYyIDwtIHN1YnNldCh5ZWFyRGYseWVhckRmJEZyZXEhPTApXG4jIHJlbmFtZSBjb2x1bW5zXG5jb2xuYW1lcyh5ZWFyRGYyKTwtYyhcImVucm9sLlllYXJcIiwgXCJlbnJvbC5nZW5kZXJcIiwgXCJjb3VudFwiKVxuXG5nZ3Bsb3QoeWVhckRmMiwgbWFwcGluZyA9IGFlcyh4ID0gZW5yb2wuWWVhciwgeSA9IGNvdW50LCBncm91cCA9IGVucm9sLmdlbmRlciAsIGNvbG9yID0gZW5yb2wuZ2VuZGVyKSkgKyBnZW9tX3BvaW50KCkgKyBnZW9tX2xpbmUoKSArIGxhYnModGl0bGUgPSBcIk51bWJlciBvZiBTdHVkZW50cyBmcm9tIDIwMDV+MjAxNyAtIFNlZ3JlZ2F0ZWQgYnkgZ2VuZGVyXCIsIHkgPSBcIk51bWJlciBvZiBTdHVkZW50cyBvZiBlYWNoIGdlbmRlclwiICwgeCA9IFwiWWVhclwiLCBjb2xvciA9IFwiR2VuZGVyXCIpXG5gYGAifQ== -->
@@ -2029,9 +2029,9 @@ ggplot(yearDf2, mapping = aes(x = enrol.Year, y = count, group = enrol.gender , 
 <!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<h3>Interpretation: Throughout the years, the number of female students are persistanly higher than male students. Throughout the years, number of male and female students seems to be move hand in hand and positively correlated. The only exception is in year 2017, where number of female students increase but number of male student drops. This also indicates that the fall in total of number of students are due to fall in number of male students. The fall in number of male students are greater than the increase of female students. It might be worth while to examine the cause of the fall of male students in 2017.</h3>
-<h3>Data Transformation actions: Form Table of Year, Gender and the respective Counts. Assign new Data Frame of 3 columns to a new variable. Subsetting Datasets to omit irrevalent rows to get inner joint of 3 columns. Renaming Columns for easier handling of data.</h3>
-<h3>Reason of Transformation: To get a new Data Frame with only 3 variables that we need for this line chart. To count number of students as geom_point and geom_line does not transform data to get count automatically like geom_bar.</h3>
+<h3>Interpretation: </h3><p>Throughout the years, the number of female students are persistanly higher than male students. Throughout the years, number of male and female students seems to be move hand in hand and positively correlated. The only exception is in year 2017, where number of female students increase but number of male student drops. This also indicates that the fall in total of number of students are due to fall in number of male students. The fall in number of male students are greater than the increase of female students. It might be worth while to examine the cause of the fall of male students in 2017.</p>
+<h3>Data Transformation actions: </h3><p>Form Table of Year, Gender and the respective Counts. Assign new Data Frame of 3 columns to a new variable. Subsetting Datasets to omit irrevalent rows to get inner joint of 3 columns. Renaming Columns for easier handling of data.</p>
+<h3>Reason of Transformation: </h3><p>To get a new Data Frame with only 3 variables that we need for this line chart. To count number of students as geom_point and geom_line does not transform data to get count automatically like geom_bar.</p>
 <h2>Objective 6:</h2>
 <p>ATAR Distributions in different types of institutions.</p>
 <!-- rnb-text-end -->
@@ -2070,13 +2070,13 @@ ggplot(knownATAR) + geom_bar(mapping = aes(x= ATAR_Group, fill = Institution_Typ
 <!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<h3>Interpretation: Overall, most institution in group of 8 have students with higher ATAR scores and higher median of ATAR Scores. Dispersion of ATAR scores of students in group of 8 seems to be narrower as well. (referring to their respective interquatile range) This might be due to institution in group of 8 have higher ATAR requirement.</h3>
+<h3>Interpretation: </h3><p>Overall, most institution in group of 8 have students with higher ATAR scores and higher median of ATAR Scores. Dispersion of ATAR scores of students in group of 8 seems to be narrower as well. (referring to their respective interquatile range) This might be due to institution in group of 8 have higher ATAR requirement.</p>
 <p>It is also worth to take note that the overall median ATAR score of all students is slighty above 80. However, six out of eight G8 universities’ students have median ATAR score at or above 90. Even the remaining two G8 universities’s students have ATAR score median greater than 85. Interestingly, both institutions that are considered a college have students with median ATAR score around 83, which are higher than many non-G8 univerisities.</p>
 <p>We can see that the mode ATAR group of G8 is at 90-95 while non-G8’s mode is at 80-85. ATAR score of both G8 and non-G8 seems to be loosely normal. The mode of ATAR score of students in college is at range 85-90.</p>
 <p>Non-G8 universities have much more students in total. Perhaps, simply due to the much higher number of institutions in non-G8 category.</p>
 <p>Last but not least, it seems that G8 universities have positive correlations with good ATAR scores. Students in group with higher ATAR score have higher percentage of them enrolled in G8. This might indicate a strong preference for G8 universities among students with good results.</p>
-<h3>Data Transformation actions: Omit data with “Unknown” ATAR_Group Convert “atar” to numeric variables Replace ATAR_Group data of “&gt;=99” with “99=&lt;”</h3>
-<h3>Reason of Transformation: Data with “Unknown” ATAR_Group also have adnormal/unsensible ATAR values. Hence, it is very hard to make use of these ATAR related data.</h3>
+<h3>Data Transformation actions: </h3><p>Omit data with “Unknown” ATAR_Group Convert “atar” to numeric variables Replace ATAR_Group data of “&gt;=99” with “99=&lt;”</p>
+<h3>Reason of Transformation: </h3><p>Data with “Unknown” ATAR_Group also have adnormal/unsensible ATAR values. Hence, it is very hard to make use of these ATAR related data.</p>
 <p>Converting “atar” from factor to numeric allow us to compute various statistics such as median , inter-quatile range and etc.</p>
 <p>Replacing ATAR_Group data of “&gt;=99” with “99=&lt;” allow barplot of ATAR_Group to be arranged from group with highest ATAR score to the lowest.</p>
 <!-- rnb-text-end -->
