@@ -4,25 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <title>Han Chooi - Projects</title>
 </head>
 <body>
 
   <header class="bg-dark text-white text-center p-4">
+    <div class="container">
+      <a href="https://www.linkedin.com/in/hanchooi/" target="_blank" class="text-white text-decoration-none">
+        <img class="profile-pic" style="height: 200px; width: 200px;" src="images/han.png" alt="han-profile-img" />
+        <h1 class="mt-3">Han Chooi</h1>
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <i class="fab fa-linkedin fa-2x"></i>
+          <p class="mb-0 ml-2">Software Application Developer | Aspiring Data Analyst</p>
+        </div>      
+      </a>
+    </div>
+  </header>
+<!-- 
+  <header class="bg-dark text-white text-center p-4">
     <a href="https://www.linkedin.com/in/hanchooi/" style="color: inherit; text-decoration: inherit;" target="_blank">
       <img class="profile-pic" style="height: 200px; width: 200px;" src="images/han.png" alt="han-profile-img" />
       <h1>Han Chooi</h1>
-      <p>Software Application Developer & Data Analyst</p>
+      <p>Software Application Developer and Data Analyst</p>
     </a>
-  </header>
+  </header> -->
+
 
   <section class="container mt-4">
     <h2 class="mb-4">Personal Projects</h2>
 
+    <div class="project mb-4">
+      <h3 class="text-primary"><a href="us_demo/index.html" target="_blank">US Demography in 1994: A Power BI Report</a></h3>
+      <p>An attempt to visualize the demographics of the United States in 1994, employing Power BI tools to provide insights and an overview.</p>
+      <h6>Key Findings</h6>
+      <ul>
+          <li>Gender disparity in occupations, with certain professions being predominantly male or female.</li>
+          <li>Earnings disparities based on factors such as education level, native country, and industry.</li>
+          <li>Differences in marital status and its correlation with demographic characteristics.</li>
+          <li>Insights into the age distribution across various demographic subgroups.</li>
+      </ul>
+    </div>
+
     <div class="project mb-4"> 
-      <h3 class="text-primary"><a href="nat_enrolment/index.html" target="_blank">An Overview of National Enrollment</a></h3>
-      <p>An attempt to study National Enrollment Data from the year 2005 to 2017 in order to gain insights into:</p>
+      <h3 class="text-primary"><a href="nat_enrolment/index.html" target="_blank">Analysis of Australia's National Enrollment using R Studio</a></h3>
+      <p>An attempt to analyze and visualize National Enrollment Data from the year 2005 to 2017 in order to gain insights into:</p>
       <ul>
         <li>Popularity of universities and their relation to G8 status and regions.</li>
         <li>Field of study that each university and region specializes in (if any).</li>

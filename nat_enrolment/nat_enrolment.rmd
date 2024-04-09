@@ -1,0 +1,246 @@
+---
+title: "Project 1 - Introduction to Data Science, 22126954 Yit Tsin Chooi "
+output: html_notebook
+---
+
+
+##Introduction:
+
+Dataset of "National Enrollment Data Set" is being used in this research. The entire dataset spans across 13 years (2005 to 2017), covers 41 Australian Universities, and has a total of  12896962 records, with a file size 6.4 GB. To make this usable, a stratified dataset with 1% records from each institution is created.
+
+The objective of this research is to be able to gain useful predictions and insights, which includes:
+
+1) Popularity of universities and it's relation to G8 status and Regions.
+2) Subject or field that each university specialize (if any) 
+3) Diffences in the preferences of International Students and Domestic Students. (region and subject field)
+4) Signs and trends of gender-segregated by industries.
+5) Year trends of number of students enrolled in higher institutions. 
+
+We shall read the CSV (Comma Seperated Values) file into R with the data assigned to variable "natEnrol".
+
+```{r }
+natEnrol <- read.csv(file="h:/Downloads/Intro to Data Science/Project 13th Sep/nat_enrol_1.csv", header=TRUE, sep=",")
+```
+
+Firstly, we shall observe structure of data to have an overview of the data
+
+```{r results = 'hide'}
+str(natEnrol)
+```
+
+We can see that there 128967 students data in this file and there are 46 variables for each student.
+
+From the name, type and example of the variables, we can understand some attributes of these 46 variables.
+
+X(int) looks like an index for the students data.
+Only 1 variable looks like sensible numerical data, namely: noEnrol(int) which looks like number of enrolment of the student.
+Varible "id"(int) looks like student ID.
+Variable "updatewhen" (Factor) is the date and time of data updates.
+Variable "updatewho" (Factor) is just a record of the party who key in this data.
+
+At this point, there are 4 variables that we can't have good understanding yet, namely:
+
+"mceetya_regional_remote_count"", "asgs_regional_remote_count"" , "onshore_indicator"" and "regionalremote_value" 
+
+Others 37 variables(factor) looks like catogerial data with the number of levels specified.
+
+The levels of the variables tell us varios important information. 
+For example, the structure of varaibles "Institution" and "Institution_Type" show us that the are 41 Institution and these Institution are catogarized into 3 types.
+
+It appears that there are some variables that might need some transformation later on to have more sensible levels. 
+For example, having 18 levels for age are too much.
+
+It appears that there are some data abnormalities and missing values as well. 
+For example, having ATAR of 1 seems unsensible and a number of "NA"s have been detected for these 4 variables:
+
+"mceetya_regional_remote_count"", "asgs_regional_remote_count"" , "onshore_indicator"" and "regionalremote_value" 
+
+Now, we would like to see the summary of the data to gain further insight.
+
+```{r results = 'hide'}
+summary(natEnrol)
+```
+
+From the summary, we can gain various useful informations like number of international students, number of english speaking students and etc.
+We will come back to these later when we start to answer the questions related to our objectives.
+
+Here, we would like to focus on highlighting data abnormalities, missing values and the link in between variables.
+
+1) "mceetya_regional_remote_count"", "asgs_regional_remote_count"" , "onshore_indicator"" and "regionalremote_value" have way too many missing values. Might not be useful.
+
+2) "atar" have various data abnormalities, atar = 999,998 and 1 don't make sense. 
+Luckily, we have "ATAR_Group" that give similar information on student's ATAR scores, we shall compare them later to see if it is possible to get sensible transformation of "atar".
+
+Now, we would like to see the example of the first 40 data to gain further insight.
+
+```{r results = 'hide'}
+head(natEnrol,n = 10)
+```
+
+X_Field_of_Education and X_Supp_field_of_education seems to be related to course name.
+
+For example:
+
+X_Field_of_Education	  X_Supp_field_of_education	        course_name
+90900	                  100300	                          Bachelor of Laws (Honours)/B VisualArts
+90900	                  91901	                            Bachelor of Laws (Honours)/B Economics
+80000	                  91901	                            B Commerce/B Economics
+
+From these 3 rows we can see that 90900 refers to Bachelor of Laws and 91901 refers to Bachelor of 
+Economics.
+
+X_Field_of_Education is the course code of the main course name.
+
+X_Supp_field_of_education is the course code of the subsidary course name.
+
+Since there are lots of missing values in "course name", 
+"X_Field_of_Education" and "X_Supp_field_of_education" shall give us more information about the courses enrolled by the students.
+
+In fact, meaning of "X_Field_of_Education" and "X_Supp_field_of_education" can be found from the link below:
+
+https://heimshelp.education.gov.au/resources/field-of-education-types
+
+Or, if we are interested in a broader perspective, "broad_foe"" and "Narrow_FOE" can tell us the field studied by the students.
+
+Next, we shall explore various relationships of these variables to gain meaningful insights
+
+In this report, we will mainly use ggplot to visualize our data. Hence, we shall first import module ggplot2.
+
+```{r}
+library(ggplot2)
+library(gridExtra)
+```
+
+To simplify our ggplot code, we will assign variable "g"" as ggplot of data "natEnrol".
+
+```{r}
+g <- ggplot(natEnrol)
+```
+
+
+Now, we shall see if our data can provide clues for any answers related to our objectives.
+
+##Objective 1: 
+
+Popularity of universities and it's relation to G8 status and it's Regions.
+
+```{r}
+# table() aggregates according the Institution
+instSums <- table(natEnrol$Institution,natEnrol$Institution_Type,natEnrol$state )
+# as.data.frame() converts table object into a data frame
+instDf <- as.data.frame(instSums)
+# taking only rows with non-zero frequency
+instDf2 <- subset(instDf,instDf$Freq!=0)
+# rename columns
+colnames(instDf2)<-c("stu.Inst","inst.type","inst.state", "count")
+
+
+ggplot(instDf2) + geom_bar(mapping= (aes(x= reorder(stu.Inst,count) , y = count , fill = inst.type )), stat = "identity") + coord_flip() + labs(title="Number of Students in each Institution", y ="Number of Students", x = "Institution", fill = "Types of Institution")
+
+
+ggplot(instDf2) + geom_bar(mapping= (aes(x= reorder(stu.Inst,count) , y = count , fill = inst.state )), stat = "identity") + coord_flip()+ labs(title="Number of Students in each Institution", y ="Number of Students", x = "Institution", fill = "States of Institution")
+
+```
+
+The Figures above shows the number of students of each institutions and their respective ranking according to the number of students.
+
+Five out of eight G8 institutions are ranked at the top. Hinting that G8 status might be correlated with the number of students enrolled to the institution.
+
+Interestingly, although University of Adelaide, University of Western Australia(UWA) and The Australian National University(ANU) are G8 institutions, they have relatively much less students compare to the others.
+
+The second figure gave us some insight on this observation. It seems the top 10 institutions with the most students are from Victoria, New South Wales and Northern Territory. In fact, there are only three institutions not from these three regions in the top 20. Furthermore, all three G8 institutions with less students are from neither of these 3 regions as well. 
+
+This might indicates that the institution's location (whether or not it is in VIC, NSW or NT) of the institution might be even more correlated with the number of students enrolled.
+
+
+##Objective 2: 
+
+Subject or field that each institutions and regions specialized in (if any).
+
+```{r}
+sTheme <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999900", "#000569", "#E600E9", "#560009", "#035050")
+
+knownFoe <- natEnrol[natEnrol$broad_foe != "" & is.na(natEnrol$broad_foe) == FALSE,]
+
+ggplot(knownFoe) + geom_bar(mapping = aes(x= Institution, fill=broad_foe), position ="fill") + coord_flip() + labs(title="Proportions of Field in each", y ="Proportion", x = "Institution", fill = "Field") + scale_fill_manual(values=sTheme)
+```
+
+From the figure above, it seems that most institutions have no obvious specialization in any field. However, it is worth to note that ANU has the highest proportion of students studying in society and culture. 
+
+
+```{r}
+g + geom_count(mapping = aes(x = state, y = broad_foe, size = stat(prop), group = state, colour = state ), show.legend = c(colour=FALSE)) + labs(size = "Proportions by States") + ggtitle("Proportions of Field in each States") + ylab("Field of study") + xlab("States")
+```
+
+##Objective 3: 
+
+Diffences in the preferences of International Students and Domestic Students. (region and subject field)
+
+
+```{r}
+g + geom_bar(mapping = aes(x="", fill=state), position ="fill") + coord_polar("y", start=0) +  ggtitle("Student's Region") + facet_grid(facets= . ~ overseas, margins = TRUE) + xlab("") + ylab("Percentage of enrolment in different region") + theme()
+
+```
+
+```{r}
+ggplot(knownFoe) + geom_bar(mapping = aes(x=overseas, fill=broad_foe), position ="fill") + coord_polar("y", start=0) + ggtitle("Field Preference for Domestic vs Overseas Students") + xlab("") + ylab("Percentage of enrolment in different fields") + labs(fill="Field of Study")
+```
+
+##Objective 4:
+
+Signs and trends of gender-segregated by industries.
+
+```{r}
+a <- ggplot(knownFoe) + geom_bar(mapping = aes(x= "", fill=gender), position ="fill") + coord_flip() + labs(title = "Proportion of Gender of All Students", y = "Percentage" , x = "" , fill = "Gender") 
+
+b <- ggplot(knownFoe) + geom_bar(mapping = aes(x= broad_foe, fill=gender), position ="fill", show.legend = FALSE) + coord_flip() + labs(title = "Proportion of Gender in different Field of Studies", y = "Percentage" , x = "Field") 
+
+grid.arrange(a,b, heights=c(1/4, 3/4), nrow = 2)
+```
+
+
+##Objective 5:
+
+Year trends of number of students enrolled in higher institutions. 
+
+```{r}
+g + geom_bar(mapping = aes(x= as.numeric(as.character(Year)),fill = gender)) + labs(title = "Number of Students from 2005~2017", y = "Count" , x = "Year", fill = "Gender")
+
+```
+
+
+
+```{r}
+# table() aggregates according the Institution
+yearSums <- table(natEnrol$Year,natEnrol$gender)
+# as.data.frame() converts table object into a data frame
+yearDf <- as.data.frame(yearSums)
+# taking only rows with non-zero frequency
+yearDf2 <- subset(yearDf,yearDf$Freq!=0)
+# rename columns
+colnames(yearDf2)<-c("enrol.Year", "enrol.gender", "count")
+
+ggplot(yearDf2, mapping = aes(x = enrol.Year, y = count, group = enrol.gender , color = enrol.gender)) + geom_point() + geom_line() + labs(title = "Number of Students from 2005~2017 - Segregated by gender", y = "Count" , x = "Year", color = "Gender")
+```
+
+##Objective 6
+
+```{r}
+knownATAR <- natEnrol[natEnrol$ATAR_Group != "Unknown", ]
+knownATAR$atar <- as.numeric(knownATAR$atar)
+
+c <- ggplot(knownATAR) + geom_boxplot(mapping = aes(x = "", y = atar),na.rm = TRUE) + labs(x= "", y = "Overall  ATAR  score")
+d <- ggplot(knownATAR) + geom_boxplot(mapping = aes(x = Institution, y = atar),na.rm = TRUE) + coord_flip() + labs(x= "", y = "ATAR  score by Institutions")
+
+
+grid.arrange(d,c, widths=c(9/10, 1/10), ncol = 2)
+```
+
+```{r}
+knownATAR <- natEnrol[natEnrol$ATAR_Group != "Unknown", ]
+knownATAR$atar <- as.numeric(knownATAR$atar)
+
+
+ggplot(knownATAR) + geom_bar(mapping = aes(x= Institution, fill=ATAR_Group), position ="fill") + coord_flip() + labs(title="Proportions of Field in each", y ="Proportion", x = "Institution", fill = "Field") + scale_fill_manual(values=sTheme)
+```
+abs
